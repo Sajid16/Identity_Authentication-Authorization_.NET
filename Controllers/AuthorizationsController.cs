@@ -37,7 +37,7 @@ namespace IdentityAuthentication_Authorization.Controllers
 
         [HttpGet]
         [Route("multiple-roles-enum")]
-        [Authorize(Roles = $"{nameof(ConstantValues.Roles.user)}, {nameof(ConstantValues.Roles.assistantmanager)}")]
+        [Authorize(Roles = $"{nameof(ConstantValues.Roles.User)}, {nameof(ConstantValues.Roles.Assistantmanager)}")]
         public async Task<IActionResult> GetMultipleEnum()
         {
             return StatusCode(StatusCodes.Status200OK, new Response { Status = "Success", Message = "Multiple roles from enum are permitted to request." });

@@ -4,10 +4,10 @@
     {
         public enum Roles
         {
-            user = 0,
-            manager = 1,
-            assistantmanager = 2,
-            seniormanager = 3
+            User = 0,
+            Manager = 1,
+            Assistantmanager = 2,
+            Seniormanager = 3
         }
     }
 }
