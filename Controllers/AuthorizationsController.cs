@@ -8,7 +8,7 @@ namespace IdentityAuthentication_Authorization.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [CustomAuthorization]
+    //[CustomAuthorization]
     public class AuthorizationsController : ControllerBase
     {
         [HttpGet]
