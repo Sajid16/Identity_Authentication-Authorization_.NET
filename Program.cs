@@ -46,6 +46,17 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
         };
     });
 
+// for policy based authorization if user has multiple roles at once
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("AdminAndManagerOnly", policy =>
+        policy.RequireRole("Admin").RequireRole("Manager"));
+    options.AddPolicy("UserAndAssistantManagerOnly", policy =>
+        policy.RequireRole("User").RequireRole("AssistantManager"));
+});
+
+// for policy based authorization if user has multiple roles at once
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

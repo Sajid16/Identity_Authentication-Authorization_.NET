@@ -6,8 +6,8 @@
         {
             User = 0,
             Manager = 1,
-            Assistantmanager = 2,
-            Seniormanager = 3
+            AssistantManager = 2,
+            Admin = 3
         }
     }
 }

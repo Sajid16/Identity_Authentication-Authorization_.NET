@@ -37,10 +37,26 @@ namespace IdentityAuthentication_Authorization.Controllers
 
         [HttpGet]
         [Route("multiple-roles-enum")]
-        [Authorize(Roles = $"{nameof(ConstantValues.Roles.User)}, {nameof(ConstantValues.Roles.Assistantmanager)}")]
+        [Authorize(Roles = $"{nameof(ConstantValues.Roles.User)}, {nameof(ConstantValues.Roles.AssistantManager)}")]
         public async Task<IActionResult> GetMultipleEnum()
         {
             return StatusCode(StatusCodes.Status200OK, new Response { Status = "Success", Message = "Multiple roles from enum are permitted to request." });
+        }
+
+        [HttpGet]
+        [Route("admin&manageronlypolicy")]
+        [Authorize(Policy = "AdminAndManagerOnly")]
+        public async Task<IActionResult> adminandmanageronlypolicy()
+        {
+            return StatusCode(StatusCodes.Status200OK, new Response { Status = "Success", Message = "adminandmanageronlypolicy are permitted to request." });
+        }
+
+        [HttpGet]
+        [Route("user&assistantmanageronlypolicy")]  
+        [Authorize(Policy = "UserAndAssistantManagerOnly")]
+        public async Task<IActionResult> userandassistantmanageronlypolicy()
+        {
+            return StatusCode(StatusCodes.Status200OK, new Response { Status = "Success", Message = "userandassistantmanageronlypolicy are permitted to request." });
         }
     }
 }
